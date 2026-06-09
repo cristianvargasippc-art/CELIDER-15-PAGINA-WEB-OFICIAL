@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Escolar R-15 | Liderazgo & Modelos de Naciones Unidas</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <div class="nav-logo-circle">
+          <!-- Replace src with your logo file path, e.g. "assets/logo.png" -->
+          <img src="assets/logo.png" alt="Club Escolar R-15" class="nav-logo-img" id="navLogoImg" />
+          <div class="nav-logo-placeholder" id="navLogoPlaceholder">R15</div>
+        </div>
+        <span class="nav-logo-text">Club Escolar <strong>R-15</strong></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">Nosotros</a></li>
+        <li><a href="#mission">Misión</a></li>
+        <li><a href="#programs">Programas</a></li>
+        <li><a href="#process">Proceso</a></li>
+        <li><a href="#testimonials">Testimonios</a></li>
+        <li><a href="#contact" class="nav-cta">Únete</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">Nosotros</a>
+      <a href="#mission">Misión</a>
+      <a href="#programs">Programas</a>
+      <a href="#process">Proceso</a>
+      <a href="#testimonials">Testimonios</a>
+      <a href="#contact">Únete al Club</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════ HERO ═══════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow-1"></div>
+      <div class="hero-glow hero-glow-2"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-eyebrow reveal-up">
+        <span class="eyebrow-dot"></span>
+        Ministerio de Educación · PLE-RD
+      </div>
+      <h1 class="hero-title reveal-up delay-1">
+        Donde los<br/>
+        <em>futuros líderes</em><br/>
+        toman la palabra.
+      </h1>
+      <p class="hero-subtitle reveal-up delay-2">
+        Club Escolar R-15 forma a los delegados dominicanos del mañana a través de los
+        Modelos de Naciones Unidas. Debate, diplomacia y liderazgo real desde el aula.
+      </p>
+      <div class="hero-actions reveal-up delay-3">
+        <a href="#contact" class="btn btn-primary">Quiero ser delegado</a>
+        <a href="#about" class="btn btn-ghost">Conocer el club</a>
+      </div>
+      <div class="hero-stats reveal-up delay-4">
+        <div class="stat">
+          <span class="stat-number" data-target="200">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Estudiantes activos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Conferencias MUN</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number" data-target="8">0</span><span class="stat-suffix"></span>
+          <span class="stat-label">Años de historia</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-logo-wrap reveal-scale delay-2">
+      <div class="hero-logo-ring">
+        <div class="hero-logo-circle">
+          <img src="assets/logo.png" alt="Logo Club Escolar R-15" id="heroLogoImg" class="hero-logo-img" />
+          <div class="hero-logo-placeholder" id="heroLogoPlaceholder">R15</div>
+        </div>
+        <svg class="ring-svg" viewBox="0 0 300 300" fill="none">
+          <circle cx="150" cy="150" r="140" stroke="url(#ringGrad)" stroke-width="1.5" stroke-dasharray="6 4"/>
+          <circle cx="150" cy="150" r="120" stroke="url(#ringGrad2)" stroke-width="0.8" opacity="0.5"/>
+          <defs>
+            <linearGradient id="ringGrad" x1="0" y1="0" x2="300" y2="300">
+              <stop offset="0%" stop-color="#4db8ff"/>
+              <stop offset="100%" stop-color="#0a4a8a"/>
+            </linearGradient>
+            <linearGradient id="ringGrad2" x1="0" y1="300" x2="300" y2="0">
+              <stop offset="0%" stop-color="#4db8ff" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#4db8ff" stop-opacity="0.8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Explorar</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ AUTHORITY STRIP ═══════════════════════ -->
+  <section class="authority-strip">
+    <div class="container">
+      <p class="authority-label">Avalado por</p>
+      <div class="authority-logos">
+        <div class="authority-item">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#4db8ff" stroke-width="1.5"/><text x="16" y="20" text-anchor="middle" fill="#4db8ff" font-size="9" font-family="Inter">MINERD</text></svg>
+          <span>Ministerio de Educación</span>
+        </div>
+        <div class="authority-dot"></div>
+        <div class="authority-item">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="1" y="1" width="30" height="30" rx="4" stroke="#4db8ff" stroke-width="1.5"/><text x="16" y="20" text-anchor="middle" fill="#4db8ff" font-size="9" font-family="Inter">PLE-RD</text></svg>
+          <span>PLE-RD</span>
+        </div>
+        <div class="authority-dot"></div>
+        <div class="authority-item">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><polygon points="16,2 30,28 2,28" stroke="#4db8ff" stroke-width="1.5" fill="none"/><text x="16" y="22" text-anchor="middle" fill="#4db8ff" font-size="7" font-family="Inter">MUN</text></svg>
+          <span>Modelo ONU</span>
+        </div>
+        <div class="authority-dot"></div>
+        <div class="authority-item">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#4db8ff" stroke-width="1.5"/><line x1="16" y1="1" x2="16" y2="31" stroke="#4db8ff" stroke-width="1"/><ellipse cx="16" cy="16" rx="8" ry="15" stroke="#4db8ff" stroke-width="1"/></svg>
+          <span>Reconocimiento Internacional</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-eyebrow">¿Quiénes somos?</p>
+          <h2 class="section-title reveal-up">
+            Un espacio donde la voz de cada estudiante importa.
+          </h2>
+          <p class="body-text reveal-up delay-1">
+            El Club Escolar R-15 es el programa de liderazgo estudiantil más completo de la República Dominicana.
+            Nacido dentro del Ministerio de Educación, formamos delegados que debaten políticas globales, ejercen
+            diplomacia real y desarrollan habilidades que ningún aula tradicional puede ofrecer.
+          </p>
+          <p class="body-text reveal-up delay-2">
+            Cada estudiante aprende a investigar, argumentar, negociar y liderar — no con teorías abstractas,
+            sino resolviendo los problemas reales que enfrenta el mundo hoy.
+          </p>
+          <a href="#contact" class="btn btn-primary reveal-up delay-3">Unirme ahora</a>
+        </div>
+        <div class="about-visual reveal-scale delay-1">
+          <div class="about-logo-frame">
+            <div class="about-logo-circle">
+              <img src="assets/logo.png" alt="Club Escolar R-15" id="aboutLogoImg" class="circular-logo" />
+              <div class="about-logo-placeholder" id="aboutLogoPlaceholder">R15</div>
+            </div>
+            <div class="about-badge about-badge-1">Liderazgo</div>
+            <div class="about-badge about-badge-2">Diplomacia</div>
+            <div class="about-badge about-badge-3">Debate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ MISSION ═══════════════════════ -->
+  <section class="mission section" id="mission">
+    <div class="container">
+      <div class="mission-inner">
+        <p class="section-eyebrow light">Nuestra misión</p>
+        <h2 class="section-title light reveal-up">
+          Formamos delegados,<br/>no solo estudiantes.
+        </h2>
+        <div class="mission-cards">
+          <div class="mission-card reveal-up delay-1">
+            <div class="mission-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2L20 12H30L22 18L25 28L16 22L7 28L10 18L2 12H12L16 2Z" stroke="#4db8ff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Excelencia académica</h3>
+            <p>Investigación profunda en política internacional, economía global y derecho humanitario.</p>
+          </div>
+          <div class="mission-card reveal-up delay-2">
+            <div class="mission-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="6" stroke="#4db8ff" stroke-width="1.5"/><path d="M4 28C4 22 9 18 16 18C23 18 28 22 28 28" stroke="#4db8ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Habilidades de liderazgo</h3>
+            <p>Oratoria, negociación, trabajo en equipo y toma de decisiones bajo presión real.</p>
+          </div>
+          <div class="mission-card reveal-up delay-3">
+            <div class="mission-icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#4db8ff" stroke-width="1.5"/><path d="M16 2C16 2 10 10 10 16C10 22 16 30 16 30C16 30 22 22 22 16C22 10 16 2 16 2Z" stroke="#4db8ff" stroke-width="1.5"/><line x1="2" y1="16" x2="30" y2="16" stroke="#4db8ff" stroke-width="1.5"/></svg>
+            </div>
+            <h3>Conciencia global</h3>
+            <p>Comprensión real de los desafíos mundiales y el papel que República Dominicana juega en ellos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PROGRAMS / FEATURES ═══════════════════════ -->
+  <section class="programs section" id="programs">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Lo que hacemos</p>
+        <h2 class="section-title reveal-up">Programas que transforman</h2>
+        <p class="section-desc reveal-up delay-1">Tres pilares que convierten a estudiantes curiosos en líderes preparados para el mundo.</p>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card reveal-up delay-1">
+          <div class="program-num">01</div>
+          <div class="program-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="2" y="8" width="36" height="26" rx="3" stroke="#4db8ff" stroke-width="1.5"/><path d="M12 20H28M12 26H22" stroke="#4db8ff" stroke-width="1.5" stroke-linecap="round"/><path d="M8 8V4M32 8V4" stroke="#4db8ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Simulaciones MUN</h3>
+          <p>Conferencias donde cada delegado representa un país real ante comités de la ONU. Debates, resoluciones y diplomacia en acción.</p>
+          <span class="program-tag">Debates en vivo</span>
+        </div>
+
+        <div class="program-card reveal-up delay-2">
+          <div class="program-num">02</div>
+          <div class="program-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 4L36 14V26L20 36L4 26V14L20 4Z" stroke="#4db8ff" stroke-width="1.5" stroke-linejoin="round"/><circle cx="20" cy="20" r="6" stroke="#4db8ff" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Formación en liderazgo</h3>
+          <p>Talleres semanales de oratoria, negociación, resolución de conflictos y comunicación estratégica con mentores expertos.</p>
+          <span class="program-tag">Talleres semanales</span>
+        </div>
+
+        <div class="program-card reveal-up delay-3">
+          <div class="program-num">03</div>
+          <div class="program-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="16" stroke="#4db8ff" stroke-width="1.5"/><path d="M20 4C20 4 12 12 12 20C12 28 20 36 20 36C20 36 28 28 28 20C28 12 20 4 20 4Z" stroke="#4db8ff" stroke-width="1.5"/><line x1="4" y1="20" x2="36" y2="20" stroke="#4db8ff" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Red internacional</h3>
+          <p>Conexiones con estudiantes de todo el mundo, acceso a conferencias internacionales y oportunidades de becas y reconocimientos.</p>
+          <span class="program-tag">Alcance global</span>
+        </div>
+
+        <div class="program-card reveal-up delay-1">
+          <div class="program-num">04</div>
+          <div class="program-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 32V16L20 8L32 16V32H24V24H16V32H8Z" stroke="#4db8ff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Investigación de políticas</h3>
+          <p>Cada delegado elabora documentos de posición reales, analiza tratados internacionales y propone soluciones fundamentadas.</p>
+          <span class="program-tag">Investigación aplicada</span>
+        </div>
+
+        <div class="program-card reveal-up delay-2">
+          <div class="program-num">05</div>
+          <div class="program-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="14" cy="14" r="8" stroke="#4db8ff" stroke-width="1.5"/><circle cx="26" cy="26" r="8" stroke="#4db8ff" stroke-width="1.5"/><line x1="20" y1="14" x2="20" y2="26" stroke="#4db8ff" stroke-width="1.5"/></svg>
+          </div>
+          <h3>Mentorías y coaching</h3>
+          <p>Acompañamiento personalizado de ex-delegados, profesores y profesionales para potenciar el crecimiento de cada estudiante.</p>
+          <span class="program-tag">Desarrollo personal</span>
+        </div>
+
+        <div class="program-card reveal-up delay-3">
+          <div class="program-num">06</div>
+          <div class="program-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 4L24 14H36L26 20L30 32L20 26L10 32L14 20L4 14H16L20 4Z" stroke="#4db8ff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Reconocimientos y premios</h3>
+          <p>Nuestros mejores delegados reciben certificados oficiales del Ministerio de Educación y distinciones a nivel nacional.</p>
+          <span class="program-tag">Certificación oficial</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ PROCESS ═══════════════════════ -->
+  <section class="process section" id="process">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Cómo funciona</p>
+        <h2 class="section-title reveal-up">Tu camino como delegado</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step reveal-up delay-1">
+          <div class="step-circle">
+            <span>1</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step-content">
+            <h3>Inscripción</h3>
+            <p>Completa el formulario de ingreso y únete a la comunidad R-15. El club está abierto a todos los estudiantes del sistema educativo nacional.</p>
+          </div>
+        </div>
+        <div class="process-step reveal-up delay-2">
+          <div class="step-circle"><span>2</span></div>
+          <div class="step-line"></div>
+          <div class="step-content">
+            <h3>Formación inicial</h3>
+            <p>Cuatro semanas de talleres intensivos: protocolo MUN, investigación de políticas, oratoria y construcción de argumentos.</p>
+          </div>
+        </div>
+        <div class="process-step reveal-up delay-3">
+          <div class="step-circle"><span>3</span></div>
+          <div class="step-line"></div>
+          <div class="step-content">
+            <h3>Primera simulación</h3>
+            <p>Participa en tu primera conferencia interna. Representa a un país, debate con otros delegados y aprende a trabajar bajo presión diplomática.</p>
+          </div>
+        </div>
+        <div class="process-step reveal-up delay-4">
+          <div class="step-circle"><span>4</span></div>
+          <div class="step-content">
+            <h3>Conferencias nacionales</h3>
+            <p>Los delegados destacados representan al club en conferencias a nivel nacional e internacional, con respaldo del Ministerio de Educación.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ IMMERSIVE QUOTE ═══════════════════════ -->
+  <section class="immersive-quote">
+    <div class="immersive-bg">
+      <div class="hero-glow hero-glow-1"></div>
+    </div>
+    <div class="container">
+      <div class="quote-content reveal-up">
+        <div class="quote-mark">"</div>
+        <blockquote>
+          La diplomacia no se aprende en los libros.<br/>
+          <em>Se aprende tomando la palabra.</em>
+        </blockquote>
+        <cite>Club Escolar R-15 · PLE-RD</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
+  <section class="testimonials section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Lo que dicen nuestros delegados</p>
+        <h2 class="section-title reveal-up">Voces del club</h2>
+      </div>
+      <div class="testimonials-grid">
+
+        <div class="testimonial-card reveal-up delay-1">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"El Club R-15 cambió mi manera de ver el mundo. Aprendí a defender mis ideas con datos reales y a escuchar perspectivas que nunca había considerado. Hoy soy mejor estudiante y mejor ciudadano."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">AM</div>
+            <div>
+              <strong>Ana María R.</strong>
+              <span>Delegada · 3er año de bachillerato</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal-up delay-2">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"En mi primera conferencia MUN me temblaban las manos. En la quinta, gané el premio Best Delegate. R-15 no solo te enseña — te prepara para ganar."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JL</div>
+            <div>
+              <strong>José Luis M.</strong>
+              <span>Delegado · Best Delegate DRMUN 2023</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal-up delay-3">
+          <div class="testimonial-stars">★★★★★</div>
+          <p>"Como profesora, he visto el impacto directo en el aula. Los estudiantes que pasan por R-15 tienen más confianza, argumentan mejor y lideran naturalmente a sus compañeros."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MC</div>
+            <div>
+              <strong>María Carmen T.</strong>
+              <span>Asesora pedagógica · MINERD</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FINAL CTA ═══════════════════════ -->
+  <section class="final-cta section" id="contact">
+    <div class="container">
+      <div class="cta-inner reveal-up">
+        <div class="cta-logo-wrap">
+          <div class="cta-logo-circle">
+            <img src="assets/logo.png" alt="Club Escolar R-15" id="ctaLogoImg" class="circular-logo" />
+            <div class="cta-logo-placeholder" id="ctaLogoPlaceholder">R15</div>
+          </div>
+        </div>
+        <p class="section-eyebrow light">¿Estás listo?</p>
+        <h2 class="section-title light reveal-up">
+          El próximo delegado<br/>eres tú.
+        </h2>
+        <p class="body-text light reveal-up delay-1">
+          Únete al Club Escolar R-15 y comienza tu formación como líder. Inscripciones abiertas para el nuevo semestre.
+        </p>
+        <div class="cta-form reveal-up delay-2">
+          <input type="email" placeholder="Tu correo electrónico" class="cta-input" />
+          <button class="btn btn-primary btn-large">Quiero unirme</button>
+        </div>
+        <p class="cta-note">Abierto a todos los estudiantes del sistema educativo nacional · Sin costo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo-circle">
+            <img src="assets/logo.png" alt="Club Escolar R-15" id="footerLogoImg" class="circular-logo" />
+            <div class="footer-logo-placeholder" id="footerLogoPlaceholder">R15</div>
+          </div>
+          <div>
+            <p class="footer-brand-name">Club Escolar R-15</p>
+            <p class="footer-brand-sub">Club de Liderazgo · Modelos de Naciones Unidas</p>
+          </div>
+        </div>
+        <nav class="footer-nav">
+          <div class="footer-col">
+            <h4>Club</h4>
+            <a href="#about">Quiénes somos</a>
+            <a href="#mission">Misión</a>
+            <a href="#programs">Programas</a>
+            <a href="#process">Proceso</a>
+          </div>
+          <div class="footer-col">
+            <h4>Participa</h4>
+            <a href="#contact">Inscribirse</a>
+            <a href="#contact">Conferencias</a>
+            <a href="#contact">Voluntariado</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contacto</h4>
+            <a href="mailto:clubescolarr15@minerd.gob.do">clubescolarr15@<br/>minerd.gob.do</a>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+          </div>
+        </nav>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 Club Escolar R-15 · Ministerio de Educación · PLE-RD · República Dominicana</p>
+        <div class="footer-links">
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos de uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
