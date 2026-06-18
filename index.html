@@ -1,475 +1,2112 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Club Escolar R-15 | Liderazgo & Modelos de Naciones Unidas</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>MUNRE XVII</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* 
+       
+     */
+    :root {
+      --navy-950: #03091a;
+      --navy-900: #060f28;
+      --navy-800: #091a3e;
+      --navy-700: #0d2454;
+      --navy-600: #0f2e6a;
+      --blue-500: #1560b8;
+      --blue-400: #2278d4;
+      --blue-300: #4aaeff;
+      --blue-200: #80ccff;
+      --gold: #c8a84b;
+      --gold-light: #e5c97a;
+      --white: #ffffff;
+      --white-90: rgba(255,255,255,0.9);
+      --white-70: rgba(255,255,255,0.7);
+      --white-50: rgba(255,255,255,0.5);
+      --white-20: rgba(255,255,255,0.2);
+      --white-10: rgba(255,255,255,0.1);
+      --white-06: rgba(255,255,255,0.06);
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+      --font-head: 'Oswald', Arial, sans-serif;
+
+      --r-sm: 6px;
+      --r-md: 12px;
+      --r-lg: 20px;
+      --r-xl: 28px;
+      --r-full: 9999px;
+
+      --shadow-glow: 0 0 50px rgba(74,174,255,0.18);
+      --shadow-gold: 0 0 30px rgba(200,168,75,0.2);
+      --trans: all 0.32s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* 
+       RESET
+     */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--navy-950);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; transition: var(--trans); }
+    ul { list-style: none; }
+    button { cursor: pointer; }
+
+    /* 
+       UTILITY
+     */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section { padding: 96px 0; }
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--blue-300);
+      margin-bottom: 14px;
+      display: block;
+    }
+    .eyebrow.gold { color: var(--gold-light); }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--white);
+    }
+    .section-title em { font-style: italic; color: var(--blue-300); }
+    .section-title.gold-em em { color: var(--gold-light); }
+    .body-text {
+      color: var(--white-70);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+    .text-center { text-align: center; }
+    .section-header { margin-bottom: 60px; }
+
+    /* 
+       BUTTONS
+     */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 30px;
+      border-radius: var(--r-full);
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: none;
+      transition: var(--trans);
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-400), var(--blue-500));
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(34,120,212,0.4);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--blue-300), var(--blue-400));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(74,174,255,0.45);
+    }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy-950);
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(200,168,75,0.35);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(200,168,75,0.5);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--white-70);
+      border: 1px solid var(--white-20);
+    }
+    .btn-ghost:hover {
+      border-color: var(--blue-300);
+      color: var(--blue-300);
+    }
+    .btn-sm { padding: 9px 20px; font-size: 12px; }
+
+    /* 
+       NAV
+     */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      transition: var(--trans);
+    }
+    .nav.scrolled {
+      background: rgba(3,9,26,0.96);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--white-10);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .nav-logos {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .nav-logo-img {
+      height: 40px;
+      width: 72px;
+      object-fit: contain;
+      filter: brightness(1.08);
+      padding: 4px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.04);
+    }
+    .nav-logo-img[src*="logocelider"] {
+      width: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .nav-divider {
+      width: 1px;
+      height: 28px;
+      background: var(--white-20);
+    }
+    .nav-title {
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white-90);
+      letter-spacing: 0.06em;
+      line-height: 1.3;
+    }
+    .nav-title span {
+      display: block;
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--blue-300);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--white-70);
+      letter-spacing: 0.04em;
+      transition: var(--trans);
+    }
+    .nav-links a:hover { color: var(--blue-300); }
+    .nav-cta {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--navy-950) !important;
+      padding: 8px 18px;
+      border-radius: var(--r-full);
+      font-weight: 700 !important;
+      font-size: 11px !important;
+    }
+    .nav-cta:hover { box-shadow: 0 4px 16px rgba(200,168,75,0.45); transform: translateY(-1px); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: var(--trans);
+    }
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: rgba(3,9,26,0.98);
+      border-top: 1px solid var(--white-10);
+      padding: 16px 24px 20px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 11px 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--white-70);
+      border-bottom: 1px solid var(--white-06);
+    }
+    .mobile-menu a:last-child { border-bottom: none; color: var(--gold-light); font-weight: 700; }
+
+    /* 
+       HERO
+     */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 110px 0 70px;
+      background: linear-gradient(120deg, #040b20 0%, #06142f 48%, #08204a 100%);
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, #040b20 0%, #06142f 48%, #08204a 100%);
+    }
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+    }
+    .glow-1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(21,96,184,0.25) 0%, transparent 70%);
+      top: -200px; right: -150px;
+    }
+    .glow-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(200,168,75,0.08) 0%, transparent 70%);
+      bottom: -50px; left: -80px;
+    }
+    .glow-3 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(74,174,255,0.1) 0%, transparent 70%);
+      top: 50%; left: 40%;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,168,75,0.12);
+      border: 1px solid rgba(200,168,75,0.3);
+      border-radius: var(--r-full);
+      padding: 6px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 28px;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:0.4; transform:scale(1.5); }
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(38px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.06;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .hero-title .edition {
+      display: block;
+      font-family: var(--font-head);
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue-300);
+      margin-bottom: 8px;
+    }
+    .hero-title .accent { color: var(--gold-light); font-style: italic; }
+    .hero-subtitle {
+      font-size: 17px;
+      color: var(--white-70);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 20px 0 36px;
+    }
+    .hero-lema {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--gold-light);
+      border-left: 2px solid var(--gold);
+      padding-left: 14px;
+      margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+    .hero-stats {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding-top: 36px;
+      border-top: 1px solid var(--white-10);
+    }
+    .stat-num {
+      font-family: var(--font-head);
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1;
+    }
+    .stat-num span { color: var(--blue-300); }
+    .stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--white-50);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .stat-div { width: 1px; height: 36px; background: var(--white-20); }
+
+    /* Hero visual side */
+    .hero-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-crest {
+      position: relative;
+      width: 380px;
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .crest-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px dashed rgba(74,174,255,0.25);
+      animation: spin 40s linear infinite;
+    }
+    .crest-ring-2 {
+      position: absolute;
+      inset: 20px;
+      border-radius: 50%;
+      border: 1px solid rgba(200,168,75,0.15);
+      animation: spin 60s linear infinite reverse;
+    }
+    @keyframes spin { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    .crest-logos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      padding: 24px;
+      z-index: 1;
+    }
+    .crest-logo-item {
+      background: rgba(9,26,62,0.86);
+      border: 1px solid var(--white-10);
+      border-radius: 16px;
+      padding: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(10px);
+      transition: var(--trans);
+      aspect-ratio: 1.35 / 1;
+      min-height: 96px;
+    }
+    .crest-logo-item:hover { border-color: rgba(74,174,255,0.4); }
+    .crest-logo-item img { max-height: 58px; max-width: 100%; width: auto; object-fit: contain; }
+    .crest-logo-item.logo-celider {
+      border-radius: 50%;
+      aspect-ratio: 1;
+      width: 112px;
+      height: 112px;
+      justify-self: center;
+      align-self: center;
+      padding: 10px;
+      background: rgba(6,18,43,0.95);
+      border-color: rgba(74,174,255,0.28);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
+      overflow: hidden;
+    }
+    .crest-logo-item.logo-celider img {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .crest-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border-radius: var(--r-full);
+      padding: 7px 18px;
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--navy-950);
+      white-space: nowrap;
+      box-shadow: var(--shadow-gold);
+      z-index: 2;
+    }
+
+    /* 
+       AUTHORITY STRIP
+     */
+    .strip {
+      background: var(--navy-900);
+      border-top: 1px solid var(--white-10);
+      border-bottom: 1px solid var(--white-10);
+      padding: 20px 0;
+    }
+    .strip-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .strip-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--white-50);
+    }
+    .strip-item img {
+      height: 32px;
+      width: 56px;
+      object-fit: contain;
+      opacity: 0.78;
+      padding: 3px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.04);
+    }
+    .strip-item img[src*="logocelider"] {
+      width: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .strip-dot { width: 4px; height: 4px; background: var(--white-20); border-radius: 50%; }
+
+    /* 
+       MISSION / VISION / VALUES
+     */
+    .mvv { background: var(--navy-900); position: relative; overflow: hidden; }
+    .mvv::before {
+      content: '';
+      position: absolute;
+      top: -150px; right: -150px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(21,96,184,0.12) 0%, transparent 65%);
+      border-radius: 50%;
+    }
+    .mvv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+    .mvv-card {
+      background: rgba(16,37,78,0.72);
+      border: 1px solid var(--white-10);
+      border-radius: var(--r-lg);
+      padding: 28px;
+      transition: var(--trans);
+      position: relative;
+      overflow: hidden;
+    }
+    .mvv-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light), transparent);
+      opacity: 0;
+      transition: var(--trans);
+    }
+    .mvv-card:hover { border-color: rgba(200,168,75,0.25); transform: translateY(-4px); box-shadow: var(--shadow-gold); }
+    .mvv-card:hover::before { opacity: 1; }
+    .mvv-icon {
+      width: 44px; height: 44px;
+      background: rgba(200,168,75,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      font-family: var(--font-head);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.08em;
+    }
+    .mvv-card h3 {
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gold-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .mvv-card p { color: var(--white-70); font-size: 15px; line-height: 1.75; }
+    .values-list {
+      list-style: none;
+      margin-top: 10px;
+    }
+    .values-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--white-70);
+      font-size: 15px;
+      line-height: 1.4;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--white-06);
+    }
+    .values-list li:last-child { border-bottom: none; }
+    .values-list li::before {
+      content: '◆';
+      color: var(--gold);
+      font-size: 8px;
+      flex-shrink: 0;
+    }
+
+    /* 
+       SG LETTER
+     */
+    .sg-section { background: var(--navy-950); }
+    .sg-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .sg-photo-col {
+      position: sticky;
+      top: 100px;
+    }
+    .sg-photo-wrap {
+      position: relative;
+    }
+    .sg-photo-frame {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      border: 1px solid rgba(74,174,255,0.2);
+      box-shadow: var(--shadow-glow);
+      background: var(--navy-800);
+    }
+    .sg-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .sg-photo-badge {
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--navy-800), var(--navy-700));
+      border: 1px solid rgba(200,168,75,0.4);
+      border-radius: var(--r-lg);
+      padding: 12px 20px;
+      text-align: center;
+      white-space: nowrap;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .sg-photo-badge strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .sg-photo-badge span {
+      font-size: 10px;
+      color: var(--gold-light);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .sg-letter-col { padding-top: 8px; padding-bottom: 48px; }
+    .sg-letter-box {
+      background: var(--white-06);
+      border: 1px solid var(--white-10);
+      border-radius: var(--r-xl);
+      padding: 44px 48px;
+    }
+    .sg-letter-box p {
+      color: var(--white-70);
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .sg-letter-box p:last-of-type { margin-bottom: 0; }
+    .sg-quote {
+      background: rgba(200,168,75,0.07);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      padding: 18px 22px;
+      margin: 24px 0;
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 15px;
+      color: var(--gold-light);
+      line-height: 1.65;
+    }
+    .sg-signature {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--white-10);
+    }
+    .sg-sig-img {
+      height: 64px;
+      width: auto;
+      margin-bottom: 8px;
+      filter: brightness(1.4) sepia(0.2);
+      opacity: 0.85;
+    }
+    .sg-signature strong {
+      display: block;
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .sg-signature span {
+      font-size: 12px;
+      color: var(--gold-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* 
+       COMMITTEES
+     */
+    .committees { background: var(--navy-900); }
+    .committees-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .committee-card {
+      background: rgba(16,37,78,0.78);
+      border: 1px solid var(--white-10);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      transition: var(--trans);
+      cursor: pointer;
+    }
+    .committee-card:hover { border-color: rgba(74,174,255,0.35); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+    .committee-header {
+      padding: 28px 28px 22px;
+      border-bottom: 1px solid var(--white-10);
+    }
+    .committee-sigla {
+      font-family: var(--font-head);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--blue-300);
+      margin-bottom: 8px;
+      display: block;
+    }
+    .committee-name {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .committee-topic {
+      font-size: 13px;
+      color: var(--white-50);
+      line-height: 1.65;
+      font-style: italic;
+    }
+    .committee-footer {
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .committee-guide-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--blue-300);
+      background: rgba(74,174,255,0.08);
+      border: 1px solid rgba(74,174,255,0.2);
+      border-radius: var(--r-full);
+      padding: 7px 14px;
+      transition: var(--trans);
+    }
+    .committee-guide-btn:hover { background: rgba(74,174,255,0.18); border-color: var(--blue-300); }
+    .committee-toggle {
+      background: none;
+      border: 1px solid var(--white-20);
+      border-radius: var(--r-full);
+      color: var(--white-50);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 7px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--trans);
+    }
+    .committee-toggle:hover { border-color: var(--white-50); color: var(--white-70); }
+    .committee-toggle .arrow {
+      display: inline-block;
+      transition: transform 0.28s ease;
+      font-size: 10px;
+    }
+    .committee-toggle.open .arrow { transform: rotate(180deg); }
+
+    /* Directiva panel */
+    .directiva-panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.42s ease;
+      border-top: 0 solid var(--white-10);
+    }
+    .directiva-panel.open {
+      max-height: 500px;
+      border-top-width: 1px;
+    }
+    .directiva-inner { padding: 22px 28px 26px; }
+    .directiva-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--white-50);
+      margin-bottom: 14px;
+    }
+    .directiva-list { display: grid; gap: 12px; }
+    .directiva-row {
+      display: grid;
+      grid-template-columns: minmax(128px, 0.78fr) minmax(0, 1.22fr);
+      align-items: start;
+      column-gap: 24px;
+    }
+    .directiva-role {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--blue-300);
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+    .directiva-role.gold { color: var(--gold-light); }
+    .directiva-name {
+      font-size: 14px;
+      color: var(--white);
+      font-weight: 600;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+
+    /* 
+       LIBRARY
+     */
+    .library { background: var(--navy-950); }
+    .library-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .library-card {
+      background: var(--white-06);
+      border: 1px solid var(--white-10);
+      border-radius: var(--r-lg);
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: var(--trans);
+      text-decoration: none;
+    }
+    .library-card:hover { border-color: rgba(74,174,255,0.35); transform: translateY(-3px); box-shadow: var(--shadow-glow); }
+    .library-icon {
+      width: 48px; height: 48px;
+      background: rgba(74,174,255,0.1);
+      border-radius: var(--r-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-family: var(--font-head);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--blue-300);
+    }
+    .library-info {}
+    .library-sigla {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue-300);
+      margin-bottom: 6px;
+    }
+    .library-name {
+      font-family: var(--font-head);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.35;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+    .library-link-label {
+      font-size: 11px;
+      color: var(--blue-300);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* 
+       SECRETARIES
+     */
+    .secretaries { background: linear-gradient(160deg, var(--navy-900) 0%, var(--navy-800) 100%); }
+    .secretaries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .secretary-card {
+      background: var(--white-06);
+      border: 1px solid var(--white-10);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      transition: var(--trans);
+      text-align: center;
+    }
+    .secretary-card:hover { border-color: rgba(200,168,75,0.3); transform: translateY(-4px); box-shadow: var(--shadow-gold); }
+    .secretary-photo {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      border-bottom: 1px solid var(--white-10);
+    }
+    .secretary-photo-placeholder {
+      width: 100%;
+      aspect-ratio: 1/1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--navy-800);
+      font-family: var(--font-head);
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--blue-300);
+      border-bottom: 1px solid var(--white-10);
+    }
+    .secretary-info { padding: 24px 20px 28px; }
+    .secretary-role {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+    .secretary-name {
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .secretary-desc {
+      font-size: 13px;
+      color: var(--white-50);
+      line-height: 1.7;
+    }
+
+    /* 
+       QUICK ACTIONS
+     */
+    .quick-actions { background: var(--navy-950); }
+    .actions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .action-card {
+      background: var(--white-06);
+      border: 1px solid var(--white-10);
+      border-radius: var(--r-xl);
+      padding: 32px 28px;
+      text-align: center;
+      transition: var(--trans);
+      text-decoration: none;
+      display: block;
+    }
+    .action-card:hover { transform: translateY(-4px); }
+    .action-card.health:hover { border-color: rgba(74,214,110,0.4); box-shadow: 0 0 30px rgba(74,214,110,0.12); }
+    .action-card.chat:hover { border-color: rgba(74,174,255,0.4); box-shadow: var(--shadow-glow); }
+    .action-card.join:hover { border-color: rgba(200,168,75,0.4); box-shadow: var(--shadow-gold); }
+    .action-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+    }
+    .action-card h3 {
+      font-family: var(--font-head);
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .action-card p { font-size: 13px; color: var(--white-50); line-height: 1.65; margin-bottom: 20px; }
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 9px 20px;
+      border-radius: var(--r-full);
+      transition: var(--trans);
+    }
+    .action-btn.green { background: rgba(74,214,110,0.15); color: #4ad66e; border: 1px solid rgba(74,214,110,0.3); }
+    .action-btn.blue { background: rgba(74,174,255,0.12); color: var(--blue-300); border: 1px solid rgba(74,174,255,0.25); }
+    .action-btn.gold-btn { background: rgba(200,168,75,0.15); color: var(--gold-light); border: 1px solid rgba(200,168,75,0.3); }
+
+    /* 
+       IMMERSIVE QUOTE
+     */
+    .quote-section {
+      padding: 110px 0;
+      background: linear-gradient(160deg, var(--navy-800) 0%, var(--navy-700) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .quote-section::before {
+      content: '"';
+      position: absolute;
+      font-family: var(--font-display);
+      font-size: 400px;
+      line-height: 0.8;
+      color: rgba(200,168,75,0.05);
+      top: 0; left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+    .quote-section blockquote {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 4vw, 42px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.35;
+      max-width: 800px;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .quote-section blockquote em { font-style: italic; color: var(--gold-light); }
+    .quote-section cite {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white-50);
+      font-style: normal;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* 
+       FOOTER
+     */
+    footer {
+      background: var(--navy-950);
+      border-top: 1px solid var(--white-10);
+      padding: 56px 0 28px;
+    }
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .footer-brand { display: flex; align-items: center; gap: 14px; }
+    .footer-brand-logo {
+      height: 48px;
+      width: 48px;
+      object-fit: cover;
+      border-radius: 50%;
+      padding: 4px;
+      background: rgba(255,255,255,0.06);
+    }
+    .footer-brand-name {
+      font-family: var(--font-head);
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
+    .footer-brand-sub { font-size: 11px; color: var(--white-50); margin-top: 3px; }
+    .footer-nav { display: flex; gap: 40px; flex-wrap: wrap; }
+    .footer-col { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col h4 {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white-50);
+      margin-bottom: 4px;
+    }
+    .footer-col a { font-size: 13px; color: var(--white-70); }
+    .footer-col a:hover { color: var(--blue-300); }
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--white-10);
+      flex-wrap: wrap;
+    }
+    .footer-bottom p { font-size: 11px; color: var(--white-50); }
+
+    /* 
+       ANIMATIONS
+     */
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+    .delay-4 { transition-delay: 0.4s; }
+
+    /* 
+       RESPONSIVE
+     */
+    @media (max-width: 1024px) {
+      .hero-layout { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { order: -1; }
+      .hero-crest { width: 280px; height: 280px; }
+      .crest-logo-item img { height: 38px; }
+      .crest-logo-item.logo-celider { width: 88px; height: 88px; }
+      .crest-logo-item.logo-celider img { width: 100%; height: 100%; }
+      .sg-layout { grid-template-columns: 1fr; gap: 40px; }
+      .sg-photo-col { position: static; }
+      .sg-photo-frame { aspect-ratio: 4/3; max-width: 400px; }
+      .secretaries-grid { grid-template-columns: repeat(2, 1fr); }
+      .mvv-grid { grid-template-columns: 1fr; }
+      .actions-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .section { padding: 68px 0; }
+      .committees-grid { grid-template-columns: 1fr; }
+      .committee-footer { align-items: stretch; flex-direction: column; }
+      .committee-guide-btn,
+      .committee-toggle { justify-content: center; }
+      .directiva-inner { padding: 20px 22px 24px; }
+      .directiva-row {
+        grid-template-columns: 1fr;
+        row-gap: 3px;
+      }
+      .directiva-role { letter-spacing: 0.08em; }
+      .library-grid { grid-template-columns: 1fr; }
+      .secretaries-grid { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; }
+      .footer-nav { gap: 28px; }
+      .sg-letter-box { padding: 28px 22px; }
+      .hero-stats { flex-wrap: wrap; gap: 20px; }
+      .strip-item:nth-child(odd) { display: none; }
+      .strip-inner { gap: 24px; }
+      .nav-logos .nav-logo-img:not(:first-child) { display: none; }
+      .nav-divider { display: none; }
+    }
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .btn { justify-content: center; text-align: center; }
+      .crest-logos { grid-template-columns: 1fr 1fr; gap: 12px; padding: 14px; }
+      .crest-logo-item img { height: 30px; }
+      .crest-logo-item.logo-celider { width: 74px; height: 74px; }
+      .crest-logo-item.logo-celider img { width: 100%; height: 100%; }
+      .hero-crest { width: 240px; height: 240px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-up { opacity: 1; transform: none; }
+      .crest-ring, .crest-ring-2 { animation: none; }
+      .hero-badge-dot { animation: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- ═══════════════════════ NAVIGATION ═══════════════════════ -->
+  <!--  NAV  -->
   <nav class="nav" id="navbar">
     <div class="nav-inner">
-      <div class="nav-logo">
-        <div class="nav-logo-circle">
-          <!-- Replace src with your logo file path, e.g. "assets/logo.png" -->
-          <img src="assets/logo.png" alt="Club Escolar R-15" class="nav-logo-img" id="navLogoImg" />
-          <div class="nav-logo-placeholder" id="navLogoPlaceholder">R15</div>
+      <div class="nav-logos">
+        <img src="assets/plerdlogo.jpg" alt="PLE-RD" class="nav-logo-img" onerror="this.style.display='none'" />
+        <div class="nav-divider"></div>
+        <img src="assets/ministerioeducation.png" alt="MINERD" class="nav-logo-img" onerror="this.style.display='none'" />
+        <div class="nav-divider"></div>
+        <img src="assets/logocelider.png" alt="Club Escolar R-15" class="nav-logo-img" onerror="this.style.display='none'" />
+        <div class="nav-divider"></div>
+        <div class="nav-title">
+          MUNRE <strong>XVII</strong>
+          <span>Regional 15 · PLE-RD</span>
         </div>
-        <span class="nav-logo-text">Club Escolar <strong>R-15</strong></span>
       </div>
       <ul class="nav-links">
-        <li><a href="#about">Nosotros</a></li>
-        <li><a href="#mission">Misión</a></li>
-        <li><a href="#programs">Programas</a></li>
-        <li><a href="#process">Proceso</a></li>
-        <li><a href="#testimonials">Testimonios</a></li>
-        <li><a href="#contact" class="nav-cta">Únete</a></li>
+        <li><a href="#mision">Misión</a></li>
+        <li><a href="#sg">Secretario General</a></li>
+        <li><a href="#comites">Comités</a></li>
+        <li><a href="#biblioteca">Biblioteca</a></li>
+        <li><a href="#secretarias">Secretarías</a></li>
+        <li><a href="#acciones" class="nav-cta">Ready para el MUNRE XVII</a></li>
       </ul>
       <button class="hamburger" id="hamburger" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu">
-      <a href="#about">Nosotros</a>
-      <a href="#mission">Misión</a>
-      <a href="#programs">Programas</a>
-      <a href="#process">Proceso</a>
-      <a href="#testimonials">Testimonios</a>
-      <a href="#contact">Únete al Club</a>
+      <a href="#mision">Misión &amp; Visión</a>
+      <a href="#sg">Secretario General</a>
+      <a href="#comites">Comités</a>
+      <a href="#biblioteca">Biblioteca Académica</a>
+      <a href="#secretarias">Secretarías</a>
+      <a href="#acciones">Ready para el MUNRE XVII →</a>
     </div>
   </nav>
 
-  <!-- ═══════════════════════ HERO ═══════════════════════ -->
+  <!--  HERO  -->
   <section class="hero" id="hero">
     <div class="hero-bg">
       <div class="hero-grid"></div>
-      <div class="hero-glow hero-glow-1"></div>
-      <div class="hero-glow hero-glow-2"></div>
+      <div class="glow glow-1"></div>
+      <div class="glow glow-2"></div>
+      <div class="glow glow-3"></div>
     </div>
-    <div class="hero-content">
-      <div class="hero-eyebrow reveal-up">
-        <span class="eyebrow-dot"></span>
-        Ministerio de Educación · PLE-RD
-      </div>
-      <h1 class="hero-title reveal-up delay-1">
-        Donde los<br/>
-        <em>futuros líderes</em><br/>
-        toman la palabra.
-      </h1>
-      <p class="hero-subtitle reveal-up delay-2">
-        Club Escolar R-15 forma a los delegados dominicanos del mañana a través de los
-        Modelos de Naciones Unidas. Debate, diplomacia y liderazgo real desde el aula.
-      </p>
-      <div class="hero-actions reveal-up delay-3">
-        <a href="#contact" class="btn btn-primary">Quiero ser delegado</a>
-        <a href="#about" class="btn btn-ghost">Conocer el club</a>
-      </div>
-      <div class="hero-stats reveal-up delay-4">
-        <div class="stat">
-          <span class="stat-number" data-target="200">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Estudiantes activos</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
-          <span class="stat-label">Conferencias MUN</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number" data-target="8">0</span><span class="stat-suffix"></span>
-          <span class="stat-label">Años de historia</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero-logo-wrap reveal-scale delay-2">
-      <div class="hero-logo-ring">
-        <div class="hero-logo-circle">
-          <img src="assets/logo.png" alt="Logo Club Escolar R-15" id="heroLogoImg" class="hero-logo-img" />
-          <div class="hero-logo-placeholder" id="heroLogoPlaceholder">R15</div>
-        </div>
-        <svg class="ring-svg" viewBox="0 0 300 300" fill="none">
-          <circle cx="150" cy="150" r="140" stroke="url(#ringGrad)" stroke-width="1.5" stroke-dasharray="6 4"/>
-          <circle cx="150" cy="150" r="120" stroke="url(#ringGrad2)" stroke-width="0.8" opacity="0.5"/>
-          <defs>
-            <linearGradient id="ringGrad" x1="0" y1="0" x2="300" y2="300">
-              <stop offset="0%" stop-color="#4db8ff"/>
-              <stop offset="100%" stop-color="#0a4a8a"/>
-            </linearGradient>
-            <linearGradient id="ringGrad2" x1="0" y1="300" x2="300" y2="0">
-              <stop offset="0%" stop-color="#4db8ff" stop-opacity="0.3"/>
-              <stop offset="100%" stop-color="#4db8ff" stop-opacity="0.8"/>
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Explorar</span>
-      <div class="scroll-arrow"></div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ AUTHORITY STRIP ═══════════════════════ -->
-  <section class="authority-strip">
-    <div class="container">
-      <p class="authority-label">Avalado por</p>
-      <div class="authority-logos">
-        <div class="authority-item">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#4db8ff" stroke-width="1.5"/><text x="16" y="20" text-anchor="middle" fill="#4db8ff" font-size="9" font-family="Inter">MINERD</text></svg>
-          <span>Ministerio de Educación</span>
-        </div>
-        <div class="authority-dot"></div>
-        <div class="authority-item">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="1" y="1" width="30" height="30" rx="4" stroke="#4db8ff" stroke-width="1.5"/><text x="16" y="20" text-anchor="middle" fill="#4db8ff" font-size="9" font-family="Inter">PLE-RD</text></svg>
-          <span>PLE-RD</span>
-        </div>
-        <div class="authority-dot"></div>
-        <div class="authority-item">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><polygon points="16,2 30,28 2,28" stroke="#4db8ff" stroke-width="1.5" fill="none"/><text x="16" y="22" text-anchor="middle" fill="#4db8ff" font-size="7" font-family="Inter">MUN</text></svg>
-          <span>Modelo ONU</span>
-        </div>
-        <div class="authority-dot"></div>
-        <div class="authority-item">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="15" stroke="#4db8ff" stroke-width="1.5"/><line x1="16" y1="1" x2="16" y2="31" stroke="#4db8ff" stroke-width="1"/><ellipse cx="16" cy="16" rx="8" ry="15" stroke="#4db8ff" stroke-width="1"/></svg>
-          <span>Reconocimiento Internacional</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ ABOUT ═══════════════════════ -->
-  <section class="about section" id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="section-eyebrow">¿Quiénes somos?</p>
-          <h2 class="section-title reveal-up">
-            Un espacio donde la voz de cada estudiante importa.
-          </h2>
-          <p class="body-text reveal-up delay-1">
-            El Club Escolar R-15 es el programa de liderazgo estudiantil más completo de la República Dominicana.
-            Nacido dentro del Ministerio de Educación, formamos delegados que debaten políticas globales, ejercen
-            diplomacia real y desarrollan habilidades que ningún aula tradicional puede ofrecer.
-          </p>
-          <p class="body-text reveal-up delay-2">
-            Cada estudiante aprende a investigar, argumentar, negociar y liderar — no con teorías abstractas,
-            sino resolviendo los problemas reales que enfrenta el mundo hoy.
-          </p>
-          <a href="#contact" class="btn btn-primary reveal-up delay-3">Unirme ahora</a>
-        </div>
-        <div class="about-visual reveal-scale delay-1">
-          <div class="about-logo-frame">
-            <div class="about-logo-circle">
-              <img src="assets/logo.png" alt="Club Escolar R-15" id="aboutLogoImg" class="circular-logo" />
-              <div class="about-logo-placeholder" id="aboutLogoPlaceholder">R15</div>
+    <div class="hero-inner">
+      <div class="container">
+        <div class="hero-layout">
+          <div class="hero-text">
+            <div class="hero-badge reveal-up">
+              <span class="hero-badge-dot"></span>
+              XVII Período de Sesiones · MUNRE
             </div>
-            <div class="about-badge about-badge-1">Liderazgo</div>
-            <div class="about-badge about-badge-2">Diplomacia</div>
-            <div class="about-badge about-badge-3">Debate</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ MISSION ═══════════════════════ -->
-  <section class="mission section" id="mission">
-    <div class="container">
-      <div class="mission-inner">
-        <p class="section-eyebrow light">Nuestra misión</p>
-        <h2 class="section-title light reveal-up">
-          Formamos delegados,<br/>no solo estudiantes.
-        </h2>
-        <div class="mission-cards">
-          <div class="mission-card reveal-up delay-1">
-            <div class="mission-icon">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><path d="M16 2L20 12H30L22 18L25 28L16 22L7 28L10 18L2 12H12L16 2Z" stroke="#4db8ff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            <h1 class="hero-title reveal-up delay-1">
+              <span class="edition">MUNRE XVII</span>
+              Voces jóvenes,<br/><span class="accent">soluciones globales.</span>
+            </h1>
+            <div class="hero-lema reveal-up delay-2">
+              "Abre tu boca, juzga con justicia, y defiende la causa del pobre y del menesteroso." · Proverbios 31:8-9
             </div>
-            <h3>Excelencia académica</h3>
-            <p>Investigación profunda en política internacional, economía global y derecho humanitario.</p>
-          </div>
-          <div class="mission-card reveal-up delay-2">
-            <div class="mission-icon">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="10" r="6" stroke="#4db8ff" stroke-width="1.5"/><path d="M4 28C4 22 9 18 16 18C23 18 28 22 28 28" stroke="#4db8ff" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <p class="hero-subtitle reveal-up delay-2">
+              El Décimo Séptimo Período de Sesiones del Modelo Regional de las Naciones Unidas 
+              de la Regional 15 de Educación reúne a los futuros líderes de la República Dominicana 
+              en debate, diplomacia y acción.
+            </p>
+            <div class="hero-actions reveal-up delay-3">
+              <a href="#acciones" class="btn btn-gold">Formulario de salud</a>
+              <a href="#comites" class="btn btn-ghost">Ver comités</a>
             </div>
-            <h3>Habilidades de liderazgo</h3>
-            <p>Oratoria, negociación, trabajo en equipo y toma de decisiones bajo presión real.</p>
-          </div>
-          <div class="mission-card reveal-up delay-3">
-            <div class="mission-icon">
-              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="14" stroke="#4db8ff" stroke-width="1.5"/><path d="M16 2C16 2 10 10 10 16C10 22 16 30 16 30C16 30 22 22 22 16C22 10 16 2 16 2Z" stroke="#4db8ff" stroke-width="1.5"/><line x1="2" y1="16" x2="30" y2="16" stroke="#4db8ff" stroke-width="1.5"/></svg>
+            <div class="hero-stats reveal-up delay-4">
+              <div>
+                <div class="stat-num">230<span>+</span></div>
+                <div class="stat-label">Delegados</div>
+              </div>
+              <div class="stat-div"></div>
+              <div>
+                <div class="stat-num">7</div>
+                <div class="stat-label">Comisiones</div>
+              </div>
+              <div class="stat-div"></div>
+              <div>
+                <div class="stat-num">XVII</div>
+                <div class="stat-label">Edición</div>
+              </div>
             </div>
-            <h3>Conciencia global</h3>
-            <p>Comprensión real de los desafíos mundiales y el papel que República Dominicana juega en ellos.</p>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ PROGRAMS / FEATURES ═══════════════════════ -->
-  <section class="programs section" id="programs">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Lo que hacemos</p>
-        <h2 class="section-title reveal-up">Programas que transforman</h2>
-        <p class="section-desc reveal-up delay-1">Tres pilares que convierten a estudiantes curiosos en líderes preparados para el mundo.</p>
-      </div>
-      <div class="programs-grid">
-
-        <div class="program-card reveal-up delay-1">
-          <div class="program-num">01</div>
-          <div class="program-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><rect x="2" y="8" width="36" height="26" rx="3" stroke="#4db8ff" stroke-width="1.5"/><path d="M12 20H28M12 26H22" stroke="#4db8ff" stroke-width="1.5" stroke-linecap="round"/><path d="M8 8V4M32 8V4" stroke="#4db8ff" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-          <h3>Simulaciones MUN</h3>
-          <p>Conferencias donde cada delegado representa un país real ante comités de la ONU. Debates, resoluciones y diplomacia en acción.</p>
-          <span class="program-tag">Debates en vivo</span>
-        </div>
-
-        <div class="program-card reveal-up delay-2">
-          <div class="program-num">02</div>
-          <div class="program-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 4L36 14V26L20 36L4 26V14L20 4Z" stroke="#4db8ff" stroke-width="1.5" stroke-linejoin="round"/><circle cx="20" cy="20" r="6" stroke="#4db8ff" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Formación en liderazgo</h3>
-          <p>Talleres semanales de oratoria, negociación, resolución de conflictos y comunicación estratégica con mentores expertos.</p>
-          <span class="program-tag">Talleres semanales</span>
-        </div>
-
-        <div class="program-card reveal-up delay-3">
-          <div class="program-num">03</div>
-          <div class="program-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="16" stroke="#4db8ff" stroke-width="1.5"/><path d="M20 4C20 4 12 12 12 20C12 28 20 36 20 36C20 36 28 28 28 20C28 12 20 4 20 4Z" stroke="#4db8ff" stroke-width="1.5"/><line x1="4" y1="20" x2="36" y2="20" stroke="#4db8ff" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Red internacional</h3>
-          <p>Conexiones con estudiantes de todo el mundo, acceso a conferencias internacionales y oportunidades de becas y reconocimientos.</p>
-          <span class="program-tag">Alcance global</span>
-        </div>
-
-        <div class="program-card reveal-up delay-1">
-          <div class="program-num">04</div>
-          <div class="program-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M8 32V16L20 8L32 16V32H24V24H16V32H8Z" stroke="#4db8ff" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Investigación de políticas</h3>
-          <p>Cada delegado elabora documentos de posición reales, analiza tratados internacionales y propone soluciones fundamentadas.</p>
-          <span class="program-tag">Investigación aplicada</span>
-        </div>
-
-        <div class="program-card reveal-up delay-2">
-          <div class="program-num">05</div>
-          <div class="program-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><circle cx="14" cy="14" r="8" stroke="#4db8ff" stroke-width="1.5"/><circle cx="26" cy="26" r="8" stroke="#4db8ff" stroke-width="1.5"/><line x1="20" y1="14" x2="20" y2="26" stroke="#4db8ff" stroke-width="1.5"/></svg>
-          </div>
-          <h3>Mentorías y coaching</h3>
-          <p>Acompañamiento personalizado de ex-delegados, profesores y profesionales para potenciar el crecimiento de cada estudiante.</p>
-          <span class="program-tag">Desarrollo personal</span>
-        </div>
-
-        <div class="program-card reveal-up delay-3">
-          <div class="program-num">06</div>
-          <div class="program-icon">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M20 4L24 14H36L26 20L30 32L20 26L10 32L14 20L4 14H16L20 4Z" stroke="#4db8ff" stroke-width="1.5" stroke-linejoin="round"/></svg>
-          </div>
-          <h3>Reconocimientos y premios</h3>
-          <p>Nuestros mejores delegados reciben certificados oficiales del Ministerio de Educación y distinciones a nivel nacional.</p>
-          <span class="program-tag">Certificación oficial</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ PROCESS ═══════════════════════ -->
-  <section class="process section" id="process">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Cómo funciona</p>
-        <h2 class="section-title reveal-up">Tu camino como delegado</h2>
-      </div>
-      <div class="process-steps">
-        <div class="process-step reveal-up delay-1">
-          <div class="step-circle">
-            <span>1</span>
-          </div>
-          <div class="step-line"></div>
-          <div class="step-content">
-            <h3>Inscripción</h3>
-            <p>Completa el formulario de ingreso y únete a la comunidad R-15. El club está abierto a todos los estudiantes del sistema educativo nacional.</p>
-          </div>
-        </div>
-        <div class="process-step reveal-up delay-2">
-          <div class="step-circle"><span>2</span></div>
-          <div class="step-line"></div>
-          <div class="step-content">
-            <h3>Formación inicial</h3>
-            <p>Cuatro semanas de talleres intensivos: protocolo MUN, investigación de políticas, oratoria y construcción de argumentos.</p>
-          </div>
-        </div>
-        <div class="process-step reveal-up delay-3">
-          <div class="step-circle"><span>3</span></div>
-          <div class="step-line"></div>
-          <div class="step-content">
-            <h3>Primera simulación</h3>
-            <p>Participa en tu primera conferencia interna. Representa a un país, debate con otros delegados y aprende a trabajar bajo presión diplomática.</p>
-          </div>
-        </div>
-        <div class="process-step reveal-up delay-4">
-          <div class="step-circle"><span>4</span></div>
-          <div class="step-content">
-            <h3>Conferencias nacionales</h3>
-            <p>Los delegados destacados representan al club en conferencias a nivel nacional e internacional, con respaldo del Ministerio de Educación.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ IMMERSIVE QUOTE ═══════════════════════ -->
-  <section class="immersive-quote">
-    <div class="immersive-bg">
-      <div class="hero-glow hero-glow-1"></div>
-    </div>
-    <div class="container">
-      <div class="quote-content reveal-up">
-        <div class="quote-mark">"</div>
-        <blockquote>
-          La diplomacia no se aprende en los libros.<br/>
-          <em>Se aprende tomando la palabra.</em>
-        </blockquote>
-        <cite>Club Escolar R-15 · PLE-RD</cite>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════ TESTIMONIALS ═══════════════════════ -->
-  <section class="testimonials section" id="testimonials">
-    <div class="container">
-      <div class="section-header">
-        <p class="section-eyebrow">Lo que dicen nuestros delegados</p>
-        <h2 class="section-title reveal-up">Voces del club</h2>
-      </div>
-      <div class="testimonials-grid">
-
-        <div class="testimonial-card reveal-up delay-1">
-          <div class="testimonial-stars">★★★★★</div>
-          <p>"El Club R-15 cambió mi manera de ver el mundo. Aprendí a defender mis ideas con datos reales y a escuchar perspectivas que nunca había considerado. Hoy soy mejor estudiante y mejor ciudadano."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">AM</div>
-            <div>
-              <strong>Ana María R.</strong>
-              <span>Delegada · 3er año de bachillerato</span>
+          <div class="hero-visual reveal-up delay-2">
+            <div class="hero-crest">
+              <div class="crest-ring"></div>
+              <div class="crest-ring-2"></div>
+              <div class="crest-logos">
+                <div class="crest-logo-item logo-celider">
+                  <img src="assets/logocelider.png" alt="CELIDER" onerror="this.parentElement.innerHTML='<span style=\'color:var(--blue-300);font-size:11px;font-weight:700;\'>CELIDER</span>'" />
+                </div>
+                <div class="crest-logo-item">
+                  <img src="assets/plerdlogo.jpg" alt="PLE-RD" onerror="this.parentElement.innerHTML='<span style=\'color:var(--blue-300);font-size:11px;font-weight:700;\'>PLE-RD</span>'" />
+                </div>
+                <div class="crest-logo-item">
+                  <img src="assets/ministerioeducation.png" alt="MINERD" onerror="this.parentElement.innerHTML='<span style=\'color:var(--blue-300);font-size:11px;font-weight:700;\'>MINERD</span>'" />
+                </div>
+                <div class="crest-logo-item" style="background:rgba(200,168,75,0.08);border-color:rgba(200,168,75,0.2);">
+                  <div style="text-align:center;">
+                    <div style="font-family:var(--font-head);font-size:22px;font-weight:700;color:var(--gold-light);line-height:1;">XVII</div>
+                    <div style="font-size:9px;font-weight:600;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;margin-top:4px;">MUNRE</div>
+                  </div>
+                </div>
+              </div>
+              <div class="crest-center">MUNRE XVII</div>
             </div>
           </div>
         </div>
-
-        <div class="testimonial-card reveal-up delay-2">
-          <div class="testimonial-stars">★★★★★</div>
-          <p>"En mi primera conferencia MUN me temblaban las manos. En la quinta, gané el premio Best Delegate. R-15 no solo te enseña — te prepara para ganar."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">JL</div>
-            <div>
-              <strong>José Luis M.</strong>
-              <span>Delegado · Best Delegate DRMUN 2023</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card reveal-up delay-3">
-          <div class="testimonial-stars">★★★★★</div>
-          <p>"Como profesora, he visto el impacto directo en el aula. Los estudiantes que pasan por R-15 tienen más confianza, argumentan mejor y lideran naturalmente a sus compañeros."</p>
-          <div class="testimonial-author">
-            <div class="author-avatar">MC</div>
-            <div>
-              <strong>María Carmen T.</strong>
-              <span>Asesora pedagógica · MINERD</span>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════ FINAL CTA ═══════════════════════ -->
-  <section class="final-cta section" id="contact">
+  <!--  STRIP  -->
+  <div class="strip">
     <div class="container">
-      <div class="cta-inner reveal-up">
-        <div class="cta-logo-wrap">
-          <div class="cta-logo-circle">
-            <img src="assets/logo.png" alt="Club Escolar R-15" id="ctaLogoImg" class="circular-logo" />
-            <div class="cta-logo-placeholder" id="ctaLogoPlaceholder">R15</div>
-          </div>
+      <div class="strip-inner">
+        <div class="strip-item">
+          <img src="assets/plerdlogo.jpg" alt="PLE-RD" onerror="this.style.display='none'" />
+          PLE-RD
         </div>
-        <p class="section-eyebrow light">¿Estás listo?</p>
-        <h2 class="section-title light reveal-up">
-          El próximo delegado<br/>eres tú.
-        </h2>
-        <p class="body-text light reveal-up delay-1">
-          Únete al Club Escolar R-15 y comienza tu formación como líder. Inscripciones abiertas para el nuevo semestre.
+        <div class="strip-dot"></div>
+        <div class="strip-item">
+          <img src="assets/ministerioeducation.png" alt="MINERD" onerror="this.style.display='none'" />
+          Ministerio de Educación
+        </div>
+        <div class="strip-dot"></div>
+        <div class="strip-item">
+          <img src="assets/logocelider.png" alt="Club R-15" onerror="this.style.display='none'" />
+          Club Escolar R-15
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--  MISIÓN / VISIÓN / VALORES  -->
+  <section class="mvv section" id="mision">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow gold">MUNRE XVII · 2026</span>
+        <h2 class="section-title gold-em reveal-up">Misión, Visión <em>y Valores</em></h2>
+        <p class="body-text reveal-up delay-1" style="max-width:600px;margin:16px auto 0;">
+          El espíritu que guía esta décimo séptima edición y que da vida al lema 
+          <strong style="color:var(--gold-light);">"Voces jóvenes, soluciones globales."</strong>
         </p>
-        <div class="cta-form reveal-up delay-2">
-          <input type="email" placeholder="Tu correo electrónico" class="cta-input" />
-          <button class="btn btn-primary btn-large">Quiero unirme</button>
+      </div>
+      <div class="mvv-grid">
+        <div class="mvv-card reveal-up delay-1">
+          <div class="mvv-icon">MI</div>
+          <h3>Misión</h3>
+          <p>
+            Formar delegados dominicanos con pensamiento crítico, liderazgo auténtico y conciencia global, 
+            a través de la simulación de los órganos de las Naciones Unidas, inspirándoles a elevar sus 
+            voces desde sus comunidades para transformar la realidad nacional e impactar la historia de 
+            la República Dominicana.
+          </p>
         </div>
-        <p class="cta-note">Abierto a todos los estudiantes del sistema educativo nacional · Sin costo</p>
+        <div class="mvv-card reveal-up delay-2">
+          <div class="mvv-icon">VI</div>
+          <h3>Visión</h3>
+          <p>
+            Ser el espacio de formación diplomática estudiantil más transformador de la región, donde 
+            cada joven descubra que su voz — fundamentada en la planificación, el compromiso, la entrega 
+            y la disciplina — es en sí misma una solución a los desafíos globales, tal como lo demostró 
+            Juan Pablo Duarte con su ejemplo perenne de liderazgo juvenil.
+          </p>
+        </div>
+        <div class="mvv-card reveal-up delay-3">
+          <div class="mvv-icon">VA</div>
+          <h3>Valores</h3>
+          <ul class="values-list">
+            <li><strong>Justicia</strong></li>
+            <li><strong>Compromiso social</strong></li>
+            <li><strong>Pensamiento crítico</strong></li>
+            <li><strong>Disciplina</strong></li>
+            <li><strong>Propósito</strong></li>
+            <li><strong>Esperanza</strong></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
-  <footer class="footer">
+  <!--  SECRETARIO GENERAL – CARTA  -->
+  <section class="sg-section section" id="sg">
+    <div class="container">
+      <div class="section-header text-center" style="margin-bottom:52px;">
+        <span class="eyebrow">Carta de bienvenida</span>
+        <h2 class="section-title reveal-up">Palabras del <em>Secretario General</em></h2>
+      </div>
+      <div class="sg-layout">
+        <div class="sg-photo-col reveal-up delay-1">
+          <div class="sg-photo-wrap">
+            <div class="sg-photo-frame">
+              <img src="assets/SG.jpg" alt="Enmanuel Guerrero Santana — Secretario General MUNRE XVII"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="sg-photo-placeholder" style="display:none;width:100%;height:100%;background:var(--navy-800);align-items:center;justify-content:center;font-family:var(--font-head);font-size:56px;color:var(--blue-300);">EG</div>
+            </div>
+            <div class="sg-photo-badge">
+              <strong>Enmanuel Guerrero Santana</strong>
+              <span>Secretario General · MUNRE XVII</span>
+            </div>
+          </div>
+        </div>
+        <div class="sg-letter-col reveal-up delay-2">
+          <div class="sg-letter-box">
+            <p>Estimados participantes,</p>
+            <p>
+              A través de la presente, tengo el grato placer de dirigirme a ustedes con sentimientos encontrados 
+              desde el Comité Organizador de este Décimo Séptimo Período de Sesiones del Modelo Regional 
+              de las Naciones Unidas de la Regional 15 de Educación: un espacio donde los sentimientos corren 
+              a flor de piel, pero sobre todo, <strong style="color:var(--white);">la esperanza.</strong>
+            </p>
+            <p>
+              Quisiera felicitarles por la encomiable tarea que han realizado a través de sus modelos de centro 
+              y distrito educativo; labores, empeños y esfuerzos que han fructificado en su llegada a este espacio. 
+              <strong style="color:var(--white);">Gracias por decidir dar lo mejor.</strong>
+            </p>
+            <p>
+              A través del lema <em style="color:var(--gold-light);">"Voces jóvenes, soluciones globales"</em>, queremos inspirarles a que, 
+              sin importar su edad, sus voces puedan ser el epicentro del cambio de sus comunidades. 
+              Quisiera instarles a elevar su voz, una voz que, cuando se alce, los demás tengan que escuchar. 
+              Voces que se alzan desde el pensamiento crítico, que no emanan del conformismo ni de la apatía 
+              social que enfrenta nuestra nación.
+            </p>
+            <p>
+              En la historia republicana encontramos jóvenes que decidieron elevar sus voces para cambiar la 
+              realidad nacional e impactar la historia para siempre. El ejemplo por excelencia es nuestro patricio 
+              Juan Pablo Duarte, quien, en una de las etapas más precoces de su vida, decidió elevar su voz para 
+              lograr una transformación ante las realidades que acongojaban la identidad nacional.
+            </p>
+            <p>
+              No solo quisiera orientarles a elevar su voz, sino también a <strong style="color:var(--white);">accionar a través de ella</strong>. 
+              Una voz no es en sí misma una solución, sino que se convierte en ella a través de la planificación 
+              y la ejecución, mediante el compromiso, la entrega y la disciplina.
+            </p>
+            <p>
+              Quisiera que comprendan que cada uno de ustedes porta un propósito, una meta que trasciende lo 
+              cotidiano de sus vidas, y que en sus corazones se encienda la pasión por ella, como una brújula 
+              se alinea con el norte.
+            </p>
+            <div class="sg-quote">
+              "Abre tu boca por el mudo en el juicio de todos los desvalidos. Abre tu boca, juzga con justicia, 
+              y defiende la causa del pobre y del menesteroso."<br/>
+              <span style="font-size:12px;font-style:normal;letter-spacing:0.1em;font-family:var(--font-body);color:var(--white-50);">— Proverbios 31:8-9</span>
+            </div>
+            <p>
+              Que su ejercicio académico en esta edición de MUNRE produzca en ustedes el más alto y excelso 
+              sentido de justicia y compromiso social, para el mejor de los intereses del avance colectivo 
+              de nuestra patria.
+            </p>
+            <div class="sg-signature">
+              <!-- La firma del SG está en SG.jpg ya incluida; si tienes imagen de firma por separado, ponla aquí -->
+              <p style="font-family:var(--font-display);font-style:italic;font-size:20px;color:var(--gold-light);margin-bottom:6px;">Con toda consideración y aprecio,</p>
+              <strong>Enmanuel Guerrero Santana</strong>
+              <span>Secretario General — XVII Modelo Regional de las Naciones Unidas, Regional 15</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  COMITÉS  -->
+  <section class="committees section" id="comites">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">7 Comisiones</span>
+        <h2 class="section-title reveal-up">Las Comisiones del <em>MUNRE XVII</em></h2>
+        <p class="body-text reveal-up delay-1" style="max-width:560px;margin:16px auto 0;">
+          Haz clic en "Ver directiva" para conocer a los miembros de cada comité y accede a la guía académica.
+        </p>
+      </div>
+      <div class="committees-grid">
+
+        <!-- CIDH -->
+        <div class="committee-card">
+          <div class="committee-header">
+            <span class="committee-sigla">CIDH</span>
+            <div class="committee-name">Comisión Interamericana de Derechos Humanos</div>
+            <div class="committee-topic">Criminalización de la protesta social y restricción de libertades civiles en contextos de autoritarismo emergente.</div>
+          </div>
+          <div class="committee-footer">
+            <a href="https://drive.google.com/file/d/1Uv5l-HYfeF1Mbu7PyHk1uyNwXxsFoe_t/view?usp=sharing" target="_blank" class="committee-guide-btn">
+              Guía académica
+            </a>
+            <button class="committee-toggle" onclick="toggleDirectiva(this)">
+              Directiva <span class="arrow">▼</span>
+            </button>
+          </div>
+          <div class="directiva-panel">
+            <div class="directiva-inner">
+              <div class="directiva-title">Directiva</div>
+              <div class="directiva-list">
+                <div class="directiva-row">
+                  <span class="directiva-role gold">Directora</span>
+                  <span class="directiva-name">Aurelia Castillo Rodríguez</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">1ra Directora</span>
+                  <span class="directiva-name">Yessica Lovera Delgado</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">2do Director</span>
+                  <span class="directiva-name">José Ángel Martín Acosta</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Otniel Lara</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Juana Valdez</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CIJ -->
+        <div class="committee-card">
+          <div class="committee-header">
+            <span class="committee-sigla">CIJ</span>
+            <div class="committee-name">Corte Internacional de Justicia</div>
+            <div class="committee-topic">Caso contencioso: Disputa territorial entre Guyana y Venezuela sobre el Esequibo.</div>
+          </div>
+          <div class="committee-footer">
+            <a href="https://drive.google.com/file/d/1vqewRIlGgEElq999R7wSiElsOgvQOs6D/view?usp=sharing" target="_blank" class="committee-guide-btn">
+              Guía académica
+            </a>
+            <button class="committee-toggle" onclick="toggleDirectiva(this)">
+              Directiva <span class="arrow">▼</span>
+            </button>
+          </div>
+          <div class="directiva-panel">
+            <div class="directiva-inner">
+              <div class="directiva-title">Directiva</div>
+              <div class="directiva-list">
+                <div class="directiva-row">
+                  <span class="directiva-role gold">Director</span>
+                  <span class="directiva-name">Luis Portorreal</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">1ra Directora</span>
+                  <span class="directiva-name">Eleanny Isabel Ortiz Rumaldo</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">2da Directora</span>
+                  <span class="directiva-name">Crismeilyn García Cripian</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Anderson Manuel De la Cruz Nivar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CSNU -->
+        <div class="committee-card">
+          <div class="committee-header">
+            <span class="committee-sigla">CSNU</span>
+            <div class="committee-name">Consejo de Seguridad de las Naciones Unidas</div>
+            <div class="committee-topic">Evaluación de la reforma del derecho de veto ante crisis humanitarias en conflictos armados contemporáneos.</div>
+          </div>
+          <div class="committee-footer">
+            <a href="https://drive.google.com/file/d/1NWvj2DlifLDqNpnYAJLbfapru4U6nnom/view?usp=sharing" target="_blank" class="committee-guide-btn">
+              Guía académica
+            </a>
+            <button class="committee-toggle" onclick="toggleDirectiva(this)">
+              Directiva <span class="arrow">▼</span>
+            </button>
+          </div>
+          <div class="directiva-panel">
+            <div class="directiva-inner">
+              <div class="directiva-title">Directiva</div>
+              <div class="directiva-list">
+                <div class="directiva-row">
+                  <span class="directiva-role gold">Director</span>
+                  <span class="directiva-name">Sebastián Pérez</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">1er Director</span>
+                  <span class="directiva-name">Jorge Junior Zalazar García</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">2da Directora</span>
+                  <span class="directiva-name">Kendra Junelly Correa Balbuena</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Ambar Nicolle Santos Cruz</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Bienvenido Caro Otaño</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- G20 -->
+        <div class="committee-card">
+          <div class="committee-header">
+            <span class="committee-sigla">G20</span>
+            <div class="committee-name">Grupo de los Veinte</div>
+            <div class="committee-topic">Estrategias ante el recrudecimiento de conflictos en Medio Oriente y sus implicaciones para la paz, la seguridad energética y el equilibrio de la economía global.</div>
+          </div>
+          <div class="committee-footer">
+            <a href="https://drive.google.com/file/d/1CMBSYCd48O2lWJPUFb4Jym7H5HH4tT91/view?usp=sharing" target="_blank" class="committee-guide-btn">
+              Guía académica
+            </a>
+            <button class="committee-toggle" onclick="toggleDirectiva(this)">
+              Directiva <span class="arrow">▼</span>
+            </button>
+          </div>
+          <div class="directiva-panel">
+            <div class="directiva-inner">
+              <div class="directiva-title">Directiva</div>
+              <div class="directiva-list">
+                <div class="directiva-row">
+                  <span class="directiva-role gold">Directora</span>
+                  <span class="directiva-name">Liliana Rodríguez</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">1ra Directora</span>
+                  <span class="directiva-name">Elizabeth Pérez Orthela</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">2do Director</span>
+                  <span class="directiva-name">José Antonio Díaz Morel</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Henry Gómez</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Gina Montero</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OMPI -->
+        <div class="committee-card">
+          <div class="committee-header">
+            <span class="committee-sigla">OMPI</span>
+            <div class="committee-name">Organización Mundial de la Propiedad Intelectual</div>
+            <div class="committee-topic">Reconocimiento legal de obras creadas por inteligencia artificial en la industria cultural global.</div>
+          </div>
+          <div class="committee-footer">
+            <a href="https://drive.google.com/file/d/1aRRnRwCAugyJVLfpLDhA8HfnFlFHcoyp/view?usp=sharing" target="_blank" class="committee-guide-btn">
+              Guía académica
+            </a>
+            <button class="committee-toggle" onclick="toggleDirectiva(this)">
+              Directiva <span class="arrow">▼</span>
+            </button>
+          </div>
+          <div class="directiva-panel">
+            <div class="directiva-inner">
+              <div class="directiva-title">Directiva</div>
+              <div class="directiva-list">
+                <div class="directiva-row">
+                  <span class="directiva-role gold">Director</span>
+                  <span class="directiva-name">Youlin Jiménez</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">1ra Directora</span>
+                  <span class="directiva-name">Shiley Aracena Cayo</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">2do Director</span>
+                  <span class="directiva-name">Maxuel Stensy Díaz Rivas</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Lía Virginia Suero Méndez</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Darwin Leonardo Vásquez Pérez</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ACNUR -->
+        <div class="committee-card">
+          <div class="committee-header">
+            <span class="committee-sigla">ACNUR</span>
+            <div class="committee-name">Alto Comisionado de las Naciones Unidas para los Refugiados</div>
+            <div class="committee-topic">Reconocimiento del refugio climático como nueva categoría jurídica de protección internacional.</div>
+          </div>
+          <div class="committee-footer">
+            <a href="https://drive.google.com/file/d/1jNXI4YBJ4XrAxLOGdv-aNzqt4XMTcPB_/view?usp=sharing" target="_blank" class="committee-guide-btn">
+              Guía académica
+            </a>
+            <button class="committee-toggle" onclick="toggleDirectiva(this)">
+              Directiva <span class="arrow">▼</span>
+            </button>
+          </div>
+          <div class="directiva-panel">
+            <div class="directiva-inner">
+              <div class="directiva-title">Directiva</div>
+              <div class="directiva-list">
+                <div class="directiva-row">
+                  <span class="directiva-role gold">Directora</span>
+                  <span class="directiva-name">Pamela Rosario</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">1ra Directora</span>
+                  <span class="directiva-name">Daniela Matilde Rodríguez Linarez</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">2do Director</span>
+                  <span class="directiva-name">Juan Pablo Ortiz Caraballo</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Jacibel Marcelina Vardepool</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ECOSOC -->
+        <div class="committee-card">
+          <div class="committee-header">
+            <span class="committee-sigla">ECOSOC</span>
+            <div class="committee-name">Consejo Económico y Social de las Naciones Unidas</div>
+            <div class="committee-topic">Establecimiento de un impuesto global a las grandes fortunas como mecanismo de redistribución internacional.</div>
+          </div>
+          <div class="committee-footer">
+            <a href="https://drive.google.com/file/d/1g8xOW-TwbD7SLNcPLE8KYydIBh_C-f8K/view?usp=sharing" target="_blank" class="committee-guide-btn">
+              Guía académica
+            </a>
+            <button class="committee-toggle" onclick="toggleDirectiva(this)">
+              Directiva <span class="arrow">▼</span>
+            </button>
+          </div>
+          <div class="directiva-panel">
+            <div class="directiva-inner">
+              <div class="directiva-title">Directiva</div>
+              <div class="directiva-list">
+                <div class="directiva-row">
+                  <span class="directiva-role gold">Directora</span>
+                  <span class="directiva-name">Nathaly Polanco</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">1er Director</span>
+                  <span class="directiva-name">Diego Andrés Cabrera Puello</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">2da Directora</span>
+                  <span class="directiva-name">Diana Felicia Sánchez Pinales</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Jasuer Alberto Ortiz Santos</span>
+                </div>
+                <div class="directiva-row">
+                  <span class="directiva-role">Evaluación y Control</span>
+                  <span class="directiva-name">Edward Castillo</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  CITA  -->
+  <div class="quote-section">
+    <blockquote class="reveal-up">
+      "La diplomacia no se aprende en los libros.<br/>
+      <em>Se aprende tomando la palabra."</em>
+    </blockquote>
+    <cite>Club Escolar R-15 · PLE-RD · MUNRE XVII</cite>
+  </div>
+
+  <!--  BIBLIOTECA  -->
+  <section class="library section" id="biblioteca">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Recursos académicos</span>
+        <h2 class="section-title reveal-up">Biblioteca <em>Académica</em></h2>
+        <p class="body-text reveal-up delay-1" style="max-width:520px;margin:14px auto 0;">
+          Accede a las guías y manuales oficiales de cada comisión para preparar tu posición como delegado.
+        </p>
+      </div>
+      <div class="library-grid">
+        <a href="https://drive.google.com/file/d/1Uv5l-HYfeF1Mbu7PyHk1uyNwXxsFoe_t/view?usp=sharing" target="_blank" class="library-card reveal-up delay-1">
+          <div class="library-icon">DOC</div>
+          <div class="library-info">
+            <div class="library-sigla">CIDH</div>
+            <div class="library-name">Comisión Interamericana de Derechos Humanos</div>
+            <div class="library-link-label">Abrir guía →</div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1vqewRIlGgEElq999R7wSiElsOgvQOs6D/view?usp=sharing" target="_blank" class="library-card reveal-up delay-2">
+          <div class="library-icon">DOC</div>
+          <div class="library-info">
+            <div class="library-sigla">CIJ</div>
+            <div class="library-name">Corte Internacional de Justicia</div>
+            <div class="library-link-label">Abrir guía →</div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1NWvj2DlifLDqNpnYAJLbfapru4U6nnom/view?usp=sharing" target="_blank" class="library-card reveal-up delay-3">
+          <div class="library-icon">DOC</div>
+          <div class="library-info">
+            <div class="library-sigla">CSNU</div>
+            <div class="library-name">Consejo de Seguridad de las Naciones Unidas</div>
+            <div class="library-link-label">Abrir guía →</div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1CMBSYCd48O2lWJPUFb4Jym7H5HH4tT91/view?usp=sharing" target="_blank" class="library-card reveal-up delay-1">
+          <div class="library-icon">DOC</div>
+          <div class="library-info">
+            <div class="library-sigla">G20</div>
+            <div class="library-name">Grupo de los Veinte</div>
+            <div class="library-link-label">Abrir guía →</div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1aRRnRwCAugyJVLfpLDhA8HfnFlFHcoyp/view?usp=sharing" target="_blank" class="library-card reveal-up delay-2">
+          <div class="library-icon">DOC</div>
+          <div class="library-info">
+            <div class="library-sigla">OMPI</div>
+            <div class="library-name">Organización Mundial de la Propiedad Intelectual</div>
+            <div class="library-link-label">Abrir guía →</div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1jNXI4YBJ4XrAxLOGdv-aNzqt4XMTcPB_/view?usp=sharing" target="_blank" class="library-card reveal-up delay-3">
+          <div class="library-icon">DOC</div>
+          <div class="library-info">
+            <div class="library-sigla">ACNUR</div>
+            <div class="library-name">Alto Comisionado para los Refugiados</div>
+            <div class="library-link-label">Abrir guía →</div>
+          </div>
+        </a>
+        <a href="https://drive.google.com/file/d/1g8xOW-TwbD7SLNcPLE8KYydIBh_C-f8K/view?usp=sharing" target="_blank" class="library-card reveal-up delay-1">
+          <div class="library-icon">DOC</div>
+          <div class="library-info">
+            <div class="library-sigla">ECOSOC</div>
+            <div class="library-name">Consejo Económico y Social de las Naciones Unidas</div>
+            <div class="library-link-label">Abrir guía →</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!--  SECRETARAS  -->
+  <section class="secretaries section" id="secretarias">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow gold">Comité organizador</span>
+        <h2 class="section-title gold-em reveal-up">Secretarías del <em>MUNRE XVII</em></h2>
+        <p class="body-text reveal-up delay-1" style="max-width:540px;margin:14px auto 0;">
+          El equipo que hace posible la décimo séptima edición del Modelo Regional de las Naciones Unidas.
+        </p>
+      </div>
+      <div class="secretaries-grid">
+
+        <!-- Secretario General -->
+        <div class="secretary-card reveal-up delay-1">
+          <img src="assets/SG.jpg" alt="Enmanuel Guerrero Santana" class="secretary-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="secretary-photo-placeholder" style="display:none;">EG</div>
+          <div class="secretary-info">
+            <div class="secretary-role">Secretario General</div>
+            <div class="secretary-name">Enmanuel Guerrero Santana</div>
+            <p class="secretary-desc">
+              Lidera la visión académica y estratégica del MUNRE XVII. Responsable de la 
+              dirección general del modelo, la coordinación entre secretarías y la representación 
+              institucional del Décimo Séptimo Período de Sesiones.
+            </p>
+          </div>
+        </div>
+
+        <!-- Secretario General Logístico -->
+        <div class="secretary-card reveal-up delay-2">
+          <img src="assets/SGL.png" alt="Anthony Snaidel Reyes Paniagua" class="secretary-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="secretary-photo-placeholder" style="display:none;">AR</div>
+          <div class="secretary-info">
+            <div class="secretary-role">Secretario General Logístico</div>
+            <div class="secretary-name">Anthony Snaidel Reyes Paniagua</div>
+            <p class="secretary-desc">
+              Coordina la organización operativa del modelo: gestión de espacios, materiales, 
+              tiempos, acreditaciones y el bienestar general de los 230 delegados durante 
+              todas las sesiones del MUNRE XVII.
+            </p>
+          </div>
+        </div>
+
+        <!-- Secretario General Académico -->
+        <div class="secretary-card reveal-up delay-3">
+          <img src="assets/SGA.jpeg" alt="Johnson Pierre Brunelus" class="secretary-photo"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div class="secretary-photo-placeholder" style="display:none;">JP</div>
+          <div class="secretary-info">
+            <div class="secretary-role">Secretario General Académico</div>
+            <div class="secretary-name">Johnson Pierre Brunelus</div>
+            <p class="secretary-desc">
+              Supervisa la calidad académica de las siete comisiones: revisión de guías de 
+              estudio, formación de directivas, estándares de debate y evaluación del desempeño 
+              de los delegados a lo largo del período de sesiones.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  ACCIONES RPIDAS  -->
+  <section class="quick-actions section" id="acciones">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="eyebrow">Delegados</span>
+        <h2 class="section-title reveal-up">Acciones <em>importantes</em></h2>
+        <p class="body-text reveal-up delay-1" style="max-width:480px;margin:14px auto 0;">
+          Completa el formulario de salud, consulta al asistente del MUNRE y únete al club.
+        </p>
+      </div>
+      <div class="actions-grid">
+
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfctt-HI1u3abUeDUhBmW0-pNjp0lKH3KP8LAt6zIfb03aEfg/viewform?usp=publish-editor"
+           target="_blank" class="action-card health reveal-up delay-1">
+          <div class="action-icon">MUN</div>
+          <h3>Formulario de Salud</h3>
+          <p>Es obligatorio completar el formulario de bienestar y salud para el control de todos los delegados durante el modelo.</p>
+          <div class="action-btn green">Completar formulario →</div>
+        </a>
+
+        <!-- REEMPLAZA ESTE ENLACE CON EL LINK DE TU CHATBOT -->
+        <a href="AQUI_VA_EL_LINK_DEL_CHATBOT" target="_blank" class="action-card chat reveal-up delay-2">
+          <div class="action-icon">MUN</div>
+          <h3>Asistente MUNRE</h3>
+          <p>¿Tienes dudas sobre tu comité, los procedimientos o las reglas de debate? Consulta al asistente virtual del MUNRE XVII.</p>
+          <div class="action-btn blue">Abrir chatbot →</div>
+        </a>
+
+        <a href="#comites" class="action-card join reveal-up delay-3">
+          <div class="action-icon">MUN</div>
+          <h3>Explora tu comité</h3>
+          <p>Conoce la directiva de tu comisión, descarga tu guía académica y prepara tu posición como delegado.</p>
+          <div class="action-btn gold-btn">Ver comités →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!--  FOOTER  -->
+  <footer>
     <div class="container">
       <div class="footer-top">
         <div class="footer-brand">
-          <div class="footer-logo-circle">
-            <img src="assets/logo.png" alt="Club Escolar R-15" id="footerLogoImg" class="circular-logo" />
-            <div class="footer-logo-placeholder" id="footerLogoPlaceholder">R15</div>
-          </div>
+          <img src="assets/logocelider.png" alt="Club Escolar R-15" class="footer-brand-logo"
+               onerror="this.style.display='none'" />
           <div>
-            <p class="footer-brand-name">Club Escolar R-15</p>
-            <p class="footer-brand-sub">Club de Liderazgo · Modelos de Naciones Unidas</p>
+            <div class="footer-brand-name">MUNRE XVII · Club Escolar R-15</div>
+            <div class="footer-brand-sub">Modelo Regional de las Naciones Unidas · Regional 15 de Educación</div>
           </div>
         </div>
         <nav class="footer-nav">
           <div class="footer-col">
-            <h4>Club</h4>
-            <a href="#about">Quiénes somos</a>
-            <a href="#mission">Misión</a>
-            <a href="#programs">Programas</a>
-            <a href="#process">Proceso</a>
+            <h4>MUNRE XVII</h4>
+            <a href="#mision">Misión &amp; Visión</a>
+            <a href="#sg">Secretario General</a>
+            <a href="#secretarias">Secretarías</a>
           </div>
           <div class="footer-col">
-            <h4>Participa</h4>
-            <a href="#contact">Inscribirse</a>
-            <a href="#contact">Conferencias</a>
-            <a href="#contact">Voluntariado</a>
+            <h4>Académico</h4>
+            <a href="#comites">Comisiones</a>
+            <a href="#biblioteca">Biblioteca</a>
           </div>
           <div class="footer-col">
-            <h4>Contacto</h4>
-            <a href="mailto:clubescolarr15@minerd.gob.do">clubescolarr15@<br/>minerd.gob.do</a>
-            <a href="#">Instagram</a>
-            <a href="#">Facebook</a>
+            <h4>Delegados</h4>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfctt-HI1u3abUeDUhBmW0-pNjp0lKH3KP8LAt6zIfb03aEfg/viewform?usp=publish-editor" target="_blank">Formulario de Salud</a>
+            <a href="AQUI_VA_EL_LINK_DEL_CHATBOT" target="_blank">Asistente Virtual</a>
+          </div>
+          <div class="footer-col">
+            <h4>Institución</h4>
+            <a href="#">Ministerio de Educación</a>
+            <a href="#">PLE-RD</a>
           </div>
         </nav>
       </div>
       <div class="footer-bottom">
-        <p>© 2024 Club Escolar R-15 · Ministerio de Educación · PLE-RD · República Dominicana</p>
-        <div class="footer-links">
-          <a href="#">Política de privacidad</a>
-          <a href="#">Términos de uso</a>
+        <p>© 2026 MUNRE XVII · Club Escolar R-15 · PLE-RD · Ministerio de Educación · República Dominicana</p>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <img src="assets/plerdlogo.jpg" alt="" style="height:20px;width:auto;object-fit:contain;opacity:0.5;" onerror="this.style.display='none'" />
+          <img src="assets/ministerioeducation.png" alt="" style="height:20px;width:auto;object-fit:contain;opacity:0.5;" onerror="this.style.display='none'" />
+          <img src="assets/logocelider.png" alt="" style="height:20px;width:auto;object-fit:contain;opacity:0.5;" onerror="this.style.display='none'" />
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script>
+    /* ─── NAV SCROLL ─────────────────── */
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    /* ─── HAMBURGER ──────────────────── */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+      const [s1, s2, s3] = hamburger.querySelectorAll('span');
+      if (open) {
+        s1.style.transform = 'rotate(45deg) translate(5px,5px)';
+        s2.style.opacity = '0';
+        s3.style.transform = 'rotate(-45deg) translate(5px,-5px)';
+      } else {
+        s1.style.transform = s2.style.opacity = s3.style.transform = '';
+      }
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.querySelectorAll('span').forEach(s => { s.style.transform = s.style.opacity = ''; });
+    }));
+
+    /* ─── SCROLL REVEAL ──────────────── */
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal-up').forEach(el => io.observe(el));
+    } else {
+      document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('visible'));
+    }
+
+    /* ─── SMOOTH SCROLL ──────────────── */
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href'));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 76, behavior: 'smooth' });
+      });
+    });
+
+    /* ─── TOGGLE DIRECTIVA ───────────── */
+    function toggleDirectiva(btn) {
+      const card = btn.closest('.committee-card');
+      const panel = card.querySelector('.directiva-panel');
+      const isOpen = panel.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      const textNode = Array.from(btn.childNodes).find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+      if (textNode) textNode.textContent = isOpen ? 'Cerrar ' : 'Directiva ';
+    }
+
+    /* ─── REDUCED MOTION ─────────────── */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('.reveal-up').forEach(el => el.classList.add('visible'));
+    }
+  </script>
 </body>
 </html>
