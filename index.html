@@ -178,22 +178,26 @@
       display: flex;
       align-items: center;
       gap: 14px;
+      cursor: pointer;
+      transition: var(--trans);
     }
+    .nav-logos:hover { opacity: 0.85; }
     .nav-logo-img {
       height: 40px;
       width: 72px;
       object-fit: contain;
-      filter: brightness(1.08);
+      filter: brightness(1.18) contrast(1.05);
       padding: 4px;
       border-radius: 12px;
-      background: rgba(255,255,255,0.04);
+      background: rgba(255,255,255,0.09);
     }
     .nav-logo-img[src*="logocelider"] {
-      width: 42px;
-      height: 40px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       object-fit: cover;
       background: transparent;
+      padding: 0;
     }
     .nav-divider {
       width: 1px;
@@ -681,7 +685,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      align-items: start;
+      align-items: stretch;
       position: relative;
       z-index: 1;
     }
@@ -693,6 +697,8 @@
       transition: var(--trans);
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
     .mvv-card::before {
       content: '';
@@ -869,8 +875,9 @@
     .committees { background: var(--navy-900); }
     .committees-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+      align-items: stretch;
     }
     .committee-card {
       background: rgba(16,37,78,0.78);
@@ -879,11 +886,15 @@
       overflow: hidden;
       transition: var(--trans);
       cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
     }
     .committee-card:hover { border-color: rgba(74,174,255,0.35); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
     .committee-header {
       padding: 28px 28px 22px;
       border-bottom: 1px solid var(--white-10);
+      flex: 1 1 auto;
     }
     .committee-sigla {
       font-family: var(--font-head);
@@ -1317,6 +1328,7 @@
       .secretaries-grid { grid-template-columns: repeat(2, 1fr); }
       .mvv-grid { grid-template-columns: 1fr; }
       .actions-grid { grid-template-columns: 1fr; }
+      .committees-grid { grid-template-columns: repeat(2, 1fr); }
       .countdown-grid { gap: 12px; }
       .countdown-unit { min-width: 78px; padding: 16px 6px; }
     }
@@ -1340,7 +1352,6 @@
       .footer-nav { gap: 28px; }
       .sg-letter-box { padding: 28px 22px; }
       .hero-stats { flex-wrap: wrap; gap: 20px; }
-      .nav-logos .nav-logo-img:not(:first-child) { display: none; }
       .nav-divider { display: none; }
       .countdown-section { padding: 44px 0; }
       .countdown-grid { gap: 8px; }
@@ -1377,18 +1388,14 @@
   <!--  NAV  -->
   <nav class="nav" id="navbar">
     <div class="nav-inner">
-      <div class="nav-logos">
-        <img src="assets/plerdlogo.jpg" alt="PLE-RD" class="nav-logo-img" onerror="this.style.display='none'" />
-        <div class="nav-divider"></div>
-        <img src="assets/ministerioeducation.png" alt="MINERD" class="nav-logo-img" onerror="this.style.display='none'" />
-        <div class="nav-divider"></div>
+      <a href="#hero" class="nav-logos" aria-label="Ir al inicio">
         <img src="assets/logocelider.png" alt="Club Escolar R-15" class="nav-logo-img" onerror="this.style.display='none'" />
         <div class="nav-divider"></div>
         <div class="nav-title">
           MUNRE <strong>XVII</strong>
           <span>Regional 15 · PLE-RD</span>
         </div>
-      </div>
+      </a>
       <ul class="nav-links">
         <li><a href="#mision">Misión</a></li>
         <li><a href="#sg">Secretario General</a></li>
@@ -1558,8 +1565,8 @@
           <h3>Visión</h3>
           <p>
             Ser el espacio de formación diplomática estudiantil más transformador de la región, donde 
-            cada joven descubra que su voz — fundamentada en la planificación, el compromiso, la entrega 
-            y la disciplina — es en sí misma una solución a los desafíos globales, tal como lo demostró 
+            cada joven descubra que su voz fundamentada en la planificación, el compromiso, la entrega 
+            y la disciplina es en sí misma una solución a los desafíos globales, tal como lo demostró 
             Juan Pablo Duarte con su ejemplo perenne de liderazgo juvenil.
           </p>
         </div>
